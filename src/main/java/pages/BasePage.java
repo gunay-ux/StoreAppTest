@@ -11,7 +11,7 @@ public class BasePage {
 	WebDriver driver ;
 	ElementControl elementControl;
 	
-	public void BasePAge(WebDriver driver) {
+	public  BasePage(WebDriver driver) {
 		this.driver = driver;
 		elementControl = new ElementControl();
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this );
