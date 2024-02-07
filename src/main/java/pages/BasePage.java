@@ -1,19 +1,19 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import org.openqa.selenium.support.PageFactory;
 import implementation.ElementControl;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BasePage {
 	
-	WebDriver driver ;
+	AppiumDriver driver ;
 	ElementControl elementControl;
 	
-	public  BasePage(WebDriver driver) {
+	public  BasePage(AppiumDriver driver) {
 		this.driver = driver;
-		elementControl = new ElementControl();
+		elementControl = new ElementControl(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this );
 		
 		

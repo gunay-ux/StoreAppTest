@@ -1,8 +1,8 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.WebElement;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class ProductPage extends BasePage {
@@ -18,10 +18,12 @@ public class ProductPage extends BasePage {
     private WebElement backButton;
 	
 
-	public ProductPage(WebDriver driver) {
+	public ProductPage(AppiumDriver driver) {
 		super(driver);
 		
 	}
+	
+	
 	
 
 }

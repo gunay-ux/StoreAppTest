@@ -1,8 +1,8 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.WebElement;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class LoginPage extends BasePage {
@@ -20,10 +20,12 @@ public class LoginPage extends BasePage {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
     private WebElement entry;
 	
-	public LoginPage(WebDriver driver) {
+	public LoginPage(AppiumDriver driver) {
 		super(driver);
 		
 	}
+	
+	
 
 	
 	
