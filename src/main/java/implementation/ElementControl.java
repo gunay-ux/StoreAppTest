@@ -1,18 +1,17 @@
 package implementation;
 
 import java.time.Duration;
-import java.util.Properties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.InteractsWithApps;
+
 import utils.TestUtils;
 
 public class ElementControl {
 	
 	 AppiumDriver driver;
-     Properties props;
+ 
 	
     public ElementControl(AppiumDriver driver) {
     	this.driver = driver;
@@ -32,6 +31,7 @@ public class ElementControl {
     public void sendKeys(WebElement e, String txt) {
   	  waitForVisibility(e);
   	  e.sendKeys(txt);
+  	  System.out.println("sendkey:"+txt);
     }
     
     public String getAttribute(WebElement e, String attribute) {
@@ -39,18 +39,11 @@ public class ElementControl {
   	 return e.getAttribute(attribute);
   	 
     }
-   
-    public void closeApp() {
-  	  
-  	  ((InteractsWithApps) driver).terminateApp(props.getProperty("androidAppPackage"));
-  	 
-    }
     
-  public void launchApp() {
-  	  
-  	  ((InteractsWithApps) driver).activateApp(props.getProperty("androidAppPackage"));
-  	 
-    }
+ 
+  
+
+    
     
 
 }

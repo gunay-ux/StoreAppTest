@@ -8,7 +8,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class ProductPage extends BasePage {
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
-    private WebElement tile;
+    private WebElement title;
 	
 	@AndroidFindBy(id="(//android.widget.TextView[@resource-id=\"com.androidsample.generalstore:id/productAddCart\"])[1]")
     private WebElement addCard;
