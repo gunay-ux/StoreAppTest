@@ -9,10 +9,9 @@ public class LoginTest extends BaseTest {
 	
 	@Parameters({"userName"})
 	@Test
-	public void verifyLogin(String userName) {
+	public void verifyLogin(String userName) throws Exception {
 		
-		System.out.println("test started");
-		System.out.println(userName);
+		System.out.println("Log test started");
 		loginpage.runLogin(userName);
 		
 				
