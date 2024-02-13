@@ -1,6 +1,7 @@
 package pages;
 
 
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -26,6 +27,21 @@ public class ProductPage extends BasePage {
 	public ProductPage(AppiumDriver driver) {
 		super(driver);
 		
+	}
+	
+
+	public String getTitleofPAge() {
+		
+		String productName= elementControl.getAttribute(title,"text");
+		
+		return productName;
+	}
+	
+	public boolean isEnabledElement() {
+		
+		return elementControl.is_Enabled(title);
+		
+			
 	}
 	
 	public void addCard() {

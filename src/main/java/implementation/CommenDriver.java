@@ -33,13 +33,15 @@ public class CommenDriver {
 		}
 	
 	public AppiumDriver getDriver() {
+		   
 	    	  return driver;
 	      }
+
 	   
 	
 	public void CloseApp() {
 		
-		driver.quit();
+		driver.close();
 		service.stop();
 		
 		

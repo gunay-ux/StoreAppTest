@@ -3,13 +3,13 @@ package tests;
 import java.io.IOException;
 import java.util.Properties;
 
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import implementation.CommenDriver;
 import io.appium.java_client.AppiumDriver;
 import pages.LoginPage;
+import pages.ProductPage;
 import utils.ConfigUtil;
 
 public class BaseTest {
@@ -21,10 +21,9 @@ public class BaseTest {
 	String deviceName;
     CommenDriver commondriver;
     LoginPage loginpage;
+    ProductPage productpage;
     AppiumDriver appiumdriver;
  
-    
-
   
  
 	@BeforeSuite
@@ -46,6 +45,7 @@ public class BaseTest {
 		commondriver = new CommenDriver(url, deviceName);
 		appiumdriver = commondriver.driver;
 		loginpage = new LoginPage(appiumdriver);
+		productpage = new ProductPage(appiumdriver);
 		
 		
 	}
@@ -53,7 +53,7 @@ public class BaseTest {
 	@AfterClass
 	public void tearDown() {
 		
-		//commondriver.CloseApp();
+		commondriver.CloseApp();
 		
 		
 	}

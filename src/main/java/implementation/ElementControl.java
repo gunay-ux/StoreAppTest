@@ -40,7 +40,13 @@ public class ElementControl {
   	 
     }
     
- 
+    public boolean is_Enabled(WebElement e) {
+    	  waitForVisibility(e);
+    	  return e.isEnabled();
+    	 
+      }
+    
+  
   
 
     

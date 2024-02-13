@@ -2,6 +2,6 @@ package utils;
 
 public class TestUtils {
 
-	public static final long WAIT = 30;
+	public static final long WAIT = 3000;
 
 }
