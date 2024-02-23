@@ -39,10 +39,10 @@ public class CommenDriver {
 
 	   
 	
-	public void CloseApp() {
-		
-		driver.close();
+	public void closeApp() {
 		service.stop();
+		driver.quit();
+		
 		
 		
 	}

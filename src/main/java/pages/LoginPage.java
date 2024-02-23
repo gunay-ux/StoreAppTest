@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
     private WebElement country;
 	
     @CacheLookup
-	@AndroidFindBy(uiAutomator="new UiScrollable(new UiSelector()).scrollIntoView(text(\"China\"));")
+	@AndroidFindBy(uiAutomator="new UiScrollable(new UiSelector()).scrollIntoView(text(\"Albania\"));")
     private WebElement selectCountry;
    
     @CacheLookup
@@ -43,7 +43,8 @@ public class LoginPage extends BasePage {
 		elementControl.click(selectCountry);
 		elementControl.sendKeys(username, userName);
 		elementControl.click(gender);
-		elementControl.click(entry);
+		elementControl.productPage(entry);
+		
 		
 		
 }

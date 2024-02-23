@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
-
+import pages.ProductPage;
 import utils.TestUtils;
 
 public class ElementControl {
@@ -40,11 +40,18 @@ public class ElementControl {
   	 
     }
     
-    public boolean is_Enabled(WebElement e) {
+    public boolean is_Displayed(WebElement e) {
     	  waitForVisibility(e);
-    	  return e.isEnabled();
+    	  return e.isDisplayed();
     	 
       }
+    
+    public ProductPage productPage(WebElement e){
+    	e.click();
+    	return new ProductPage(driver);
+    	
+    }
+
     
   
   
