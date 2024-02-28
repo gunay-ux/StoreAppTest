@@ -14,9 +14,6 @@ public class ConfigUtil {
 		Properties property = new Properties();
 		property.load(fileReader);
 		System.out.println("property"+property);
-		
-	
-	    
 		return property;
 	}
 

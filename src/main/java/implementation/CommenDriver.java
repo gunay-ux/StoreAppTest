@@ -28,8 +28,6 @@ public class CommenDriver {
 			driver  = new AndroidDriver(service.getUrl(), option);
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 			
-			
-		
 		}
 	
 	public AppiumDriver getDriver() {

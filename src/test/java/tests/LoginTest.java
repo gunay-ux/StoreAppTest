@@ -1,13 +1,11 @@
 package tests;
 
 
-import java.lang.reflect.Method;
 
-import org.testng.annotations.BeforeMethod;
-//import org.testng.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+
 
 
 
@@ -17,28 +15,29 @@ import pages.LoginPage;
 public class LoginTest extends BaseTest {
 	
 	 
-	 @BeforeMethod
-	  public void beforeMethod(Method m) {
-		 loginpage = new LoginPage(appiumdriver);
-		  System.out.println("\n"+ "***** starting test:" + m.getName() + "*****" + "\n");
-		  
-	  }
+	
 	@Parameters({"userName"})
-	@Test
+	@Test(priority=1)
 	public void verifyLogin(String userName) throws Exception {
 		
-		loginpage = new LoginPage(appiumdriver);
-		System.out.println("Loginappiumdriver"+appiumdriver); 
-		System.out.println("LoginconfigProperty"+configProperty);
-		System.out.println("Login test started");
 		loginpage.runLogin(userName);
-		Thread.sleep(3000);
-		
-		/*String actuall = productpage.getTitleofPAge();
-		System.out.println(actuall);
-		Assert.assertEquals("Products",actuall );*/
+		String actPageName = productpage.getTitleofPAge();
+		System.out.println(actPageName);
+		Assert.assertEquals("Products",actPageName );
 	    
 		}
+	
+	@Test(priority=2)
+	public void invalidUserName () throws Exception {
+		
+		String actAlert = loginpage.invalidUsernameLogin();
+		System.out.println("Toastmassage:"+ actAlert);
+		Assert.assertEquals("Please enter your name",actAlert );
+	    
+	    
+		}
+	
+	
 	
 
 }

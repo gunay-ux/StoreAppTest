@@ -1,10 +1,12 @@
 package tests;
 
 
+import java.lang.reflect.Method;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import implementation.CommenDriver;
 import io.appium.java_client.AppiumDriver;
@@ -42,33 +44,39 @@ public class BaseTest {
 		
 		if(this.configProperty==null) {
 			
-			System.out.println("nuuuulllll");
 			configProperty = new Properties();
 		    currentWorkingDirectory = System.getProperty("user.dir");
 		    configFileName = currentWorkingDirectory+"/src/config/config.properties";
 		    System.out.println(configFileName);
+		    
 		    configProperty = ConfigUtil.readProperties(configFileName);
 		    url = configProperty.getProperty("baseURL");
 			deviceName = configProperty.getProperty("appName");
-			System.out.println("nullUrl"+url);
-			System.out.println("nullDivece"+deviceName);
+			
 			commendriver = new CommenDriver(url, deviceName);
 			appiumdriver = commendriver.driver;
 		    return;
 			
 		}
-			url = configProperty.getProperty("baseURL");
-			deviceName = configProperty.getProperty("appName");
-			System.out.println("setupUrl"+url);
-			System.out.println("setupDivece"+deviceName);
-			commendriver = new CommenDriver(url, deviceName);
-			appiumdriver = commendriver.driver;
+		
+		url = configProperty.getProperty("baseURL");
+		deviceName = configProperty.getProperty("appName");
+		commendriver = new CommenDriver(url, deviceName);
+		appiumdriver = commendriver.driver;
 	
 		
 		
 				
 		
 	}
+	 @BeforeMethod
+	  public void beforeMethod(Method m) {
+		 
+		 loginpage = new LoginPage(appiumdriver);
+		 productpage = new ProductPage(appiumdriver);
+		 System.out.println("\n"+ "***** starting test:" + m.getName() + "*****" + "\n");
+		  
+	  }
 	
 	
 	

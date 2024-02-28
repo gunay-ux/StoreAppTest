@@ -18,10 +18,18 @@ public class LoginPage extends BasePage {
     @CacheLookup
 	@AndroidFindBy(id="com.androidsample.generalstore:id/nameField")
     private WebElement username;
+    
+    @CacheLookup
+   	@AndroidFindBy(xpath="//android.widget.Toast[1]")
+       private WebElement toastmessage;
 	
     @CacheLookup
     @AndroidFindBy(id="com.androidsample.generalstore:id/radioFemale")
     private WebElement gender;
+    
+    @CacheLookup
+    @AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_back")
+    private WebElement backButton;
     
     @CacheLookup 
 	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
@@ -48,7 +56,18 @@ public class LoginPage extends BasePage {
 		
 		
 }
-
+	public String invalidUsernameLogin() throws Exception {
+		
+		elementControl.click(backButton);
+	    username.clear();
+	    elementControl.click(country);
+	    elementControl.click(selectCountry);
+	    elementControl.click(gender);
+	    elementControl.productPage(entry);
+	    String name = toastmessage.getAttribute("name");
+	    System.out.println(name);
+	    return name;
+	}
 
 	
 	

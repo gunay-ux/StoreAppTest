@@ -6,13 +6,23 @@
     <classes>
       <class name="tests.ProductTest">
         <methods>
-          <include name="verifyProduct" invocation-numbers="0"/>
+          <include name="verifyProduct"/>
           <include name="preSetup"/>
           <include name="tearDown"/>
           <include name="beforeMethod"/>
           <include name="setup"/>
         </methods>
       </class> <!-- tests.ProductTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="verifyLogin"/>
+          <include name="invalidUserName"/>
+          <include name="beforeMethod"/>
+          <include name="preSetup"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
