@@ -8,9 +8,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.CardPage;
-//import pages.CardPage;
-//import pages.LoginPage;
-//import pages.ProductPage;
 import pages.LoginPage;
 import pages.ProductPage;
 
