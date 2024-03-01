@@ -8,38 +8,37 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.CardPage;
+//import pages.CardPage;
+//import pages.LoginPage;
+//import pages.ProductPage;
 import pages.LoginPage;
 import pages.ProductPage;
 
-public class ProductTest extends BaseTest{
-
+public class CardTest extends BaseTest {
 	
 	 @BeforeMethod
 	  public void beforeMethod(Method m) {
-
+ 
 		 loginpage = new LoginPage(appiumdriver);
 		 productpage = new ProductPage(appiumdriver);
 		 cardpage = new CardPage(appiumdriver);
 	     System.out.println("\n"+ "***** starting productPage test:" + m.getName() + "*****" + "\n");
 		 
 	  }
-	 
-	 
+	
 	@Parameters({"userName"})
-	@Test(priority=1)
-	public void verifyProduct(String userName) throws Exception {
-		
-		
-		System.out.println("Login test started");
-		loginpage.runLogin(userName);
-		productpage.addCard();
-	    String count = productpage.basketCountControl();
-	    System.out.print("Count:"+count);
-	    Assert.assertEquals(count, "1");
+	@Test
+	public void verifyCardPageName(String userName) throws Exception {
+	    loginpage.runLogin(userName);
+	    productpage.addCard();
+	    productpage.basketCountControl();
 	    productpage.shoppingCardclick();
-		
+		String cardName  = cardpage.getCardName();
+	    System.out.print("Cardname:"+cardName);
+	    Assert.assertEquals(cardName, "Cart");
 	    
+	
 	}
-
+	
 
 }

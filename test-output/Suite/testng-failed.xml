@@ -4,25 +4,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="userName" value="Gunay"/>
     <classes>
-      <class name="tests.ProductTest">
+      <class name="tests.CardTest">
         <methods>
-          <include name="verifyProduct"/>
+          <include name="verifyCardPageName" invocation-numbers="0"/>
           <include name="preSetup"/>
-          <include name="tearDown"/>
           <include name="beforeMethod"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- tests.ProductTest -->
-      <class name="tests.LoginTest">
-        <methods>
-          <include name="verifyLogin"/>
-          <include name="invalidUserName"/>
-          <include name="beforeMethod"/>
-          <include name="preSetup"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.CardTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import implementation.CommenDriver;
 import io.appium.java_client.AppiumDriver;
+import pages.CardPage;
 import pages.LoginPage;
 import pages.ProductPage;
 import utils.ConfigUtil;
@@ -24,6 +25,7 @@ public class BaseTest {
 	public CommenDriver commendriver;
 	LoginPage loginpage;
 	ProductPage productpage;
+	CardPage cardpage;
     AppiumDriver appiumdriver;
  
   
@@ -74,6 +76,7 @@ public class BaseTest {
 		 
 		 loginpage = new LoginPage(appiumdriver);
 		 productpage = new ProductPage(appiumdriver);
+		 cardpage = new CardPage(appiumdriver);
 		 System.out.println("\n"+ "***** starting test:" + m.getName() + "*****" + "\n");
 		  
 	  }

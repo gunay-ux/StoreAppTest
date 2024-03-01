@@ -24,7 +24,7 @@ public class ProductPage extends BasePage {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/counterText")
     private WebElement basketCard;
 	
-	@AndroidFindBy(id="(com.androidsample.generalstore:id/appbar_btn_cart")
+	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_cart")
     private WebElement shoppingCard;
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_back")
@@ -69,23 +69,22 @@ public class ProductPage extends BasePage {
 
 	
 	public void backLogin() {
-		
 		elementControl.click(backButton);
 			
 	}
 	public void clickShoppingCard(){
-		
 		elementControl.click(shoppingCard);
 			
 	}
-	
-public String  basketcountControl(){
+	public String  basketCountControl(){
 		
 		String card = elementControl.getAttribute(basketCard, "text");
 		return card;
 	}
-	
-
+	public void shoppingCardclick() {
+		elementControl.cardPage(shoppingCard);
+		
+	}
 	
 
 }

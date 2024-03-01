@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
+import pages.CardPage;
 import pages.ProductPage;
 import utils.TestUtils;
 
@@ -47,15 +48,23 @@ public class ElementControl {
       }
     
     public ProductPage productPage(WebElement e){
+    	waitForVisibility(e);
     	e.click();
     	return new ProductPage(driver);
     	
     }
-
     
-  
-  
+    public CardPage cardPage(WebElement e){
+    	waitForVisibility(e);
+    	e.click();
+    	return new CardPage(driver);
+    	
+    }
+    
+    
+   
 
+  
     
     
 
