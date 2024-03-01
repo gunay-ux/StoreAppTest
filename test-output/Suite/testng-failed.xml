@@ -4,15 +4,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="userName" value="Gunay"/>
     <classes>
-      <class name="tests.CardTest">
+      <class name="tests.ProductTest">
         <methods>
-          <include name="verifyCardPageName" invocation-numbers="0"/>
+          <include name="verifyMessageForEmptyBasket" invocation-numbers="0"/>
           <include name="preSetup"/>
-          <include name="beforeMethod"/>
           <include name="tearDown"/>
+          <include name="beforeMethod"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- tests.CardTest -->
+      </class> <!-- tests.ProductTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

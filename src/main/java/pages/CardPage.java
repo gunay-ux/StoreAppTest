@@ -10,8 +10,7 @@ public class CardPage extends BasePage {
 	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
     private WebElement cardTitle;
 	
-	
-	
+
 	
 
 	public CardPage(AppiumDriver driver) {

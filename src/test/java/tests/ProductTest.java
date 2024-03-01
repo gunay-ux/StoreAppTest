@@ -26,8 +26,8 @@ public class ProductTest extends BaseTest{
 	 
 	 
 	@Parameters({"userName"})
-	@Test(priority=1)
-	public void verifyProduct(String userName) throws Exception {
+	@Test
+	public void verifyForAddProduct(String userName) throws Exception {
 		
 		
 		System.out.println("Login test started");
@@ -37,9 +37,11 @@ public class ProductTest extends BaseTest{
 	    System.out.print("Count:"+count);
 	    Assert.assertEquals(count, "1");
 	    productpage.shoppingCardclick();
-		
-	    
+	   
 	}
+	    
+	
+	
 
 
 }

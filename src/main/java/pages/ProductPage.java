@@ -29,12 +29,12 @@ public class ProductPage extends BasePage {
 	
 	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_back")
     private WebElement backButton;
+
 	
 
 	public ProductPage(AppiumDriver driver) {
 		super(driver);
-		
-		
+			
 	}
 	
 
@@ -85,6 +85,7 @@ public class ProductPage extends BasePage {
 		elementControl.cardPage(shoppingCard);
 		
 	}
+
 	
 
 }
